@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>FarmMart</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet"href="style.css">
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <script src="https://kit.fontawesome.com/332a215f17.js" crossorigin="anonymous"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="nav-bar">
+        <ul class="nav nav-pills nav-fill">
+            <li class="nav-item ">
+              <a class="nav-link text-warning" aria-current="page" href="./mainpage.html">Home</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#">Store</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link bg-warning active" href="./nearbymarket.html">Nearby Markets</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-warning" href="#">Auction</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link text-warning" href="./guidelines.html">GuideLines</a>
+            </li>
+          </ul>
+      </div>
+       
+    <h2>
+        Add Google Map on Your
+        Webpage: Geeksforgeeks
+    </h2>
+    
+    <!--The div element for the map -->
+    <button onclick="getLocation()">Try It</button>
+    <div id="map"></div>
+    
+   
+    
+    <script>
+        var x = document.getElementById("map");
+        function getLocation() {
+            console.log("hii")
+            if (navigator.geolocation) {
+                console.log("kal")
+                // navigator.geolocation.getCurrentPosition(showPosition);
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    let lat = position.coords.latitude;
+                    let long = position.coords.longitude;
+
+                    console.log(lat, long);
+                    // x.innerHTML = `<iframe src="https://maps.google.com/maps?q=farmer%20market/19.2136314,73.1694986&hl=en&z=14&amp;output=embed"  height="100%" style="border:0; height: 100%" allowfullscreen="" loading="lazy"></iframe>`;
+                    // x.innerHTML = `<iframe src="<iframe src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=farmer%20market+()&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"></iframe>`;
+                    x.innerHTML = `<div style="width: 100%"><iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.com/maps?width=100%25&amp;height=600&amp;hl=en&amp;q=farmer%20market+()&amp;t=&amp;z=12&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"><a href="https://www.maps.ie/distance-area-calculator.html">measure area map</a></iframe></div>`
+                        
+                });
+
+            } else {
+                x.innerHTML = "Geolocation is not supported by this browser.";
+            }
+        }
+
+        function showPosition(position) {
+            console.log("exc")
+            
+        }       
+    </script>
+
+
+
+<footer class="footer-sec mt-5 mx-auto">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 footer-widget">
+                <h4>About Us</h4>
+                <p>Explore our main channel and adventure through our facilites</p>
+                <div class="footer-logo">
+                    <h3 class="text-white">FarmMart</h3>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 footer-widget">
+                <h4>Contact Info</h4>
+                <div class="footer-address">
+                    <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Atque, voluptate!</p>
+                    <span>Phone: +4563465484</span>
+                    <span>email: something@gmail.com</span>
+                </div>
+            </div>
+            <div class="col-lg-3 col-sm-6 mb-4 mb-xl-0 footer-widget">
+                <h4> Important Links</h4>
+                <ul>
+                    <li><a href="">Off to our Home Website</a></li>
+                    <li><a href="" target="_blank">Social media</a></li>
+                    
+                    
+                </ul>
+
+            </div>
+           <div class="col-lg-3 col-sm-6 col-md-6 mb-4 mb-xl-0 footer-widget">
+                <h4> Newsletter</h4>
+                <p>To publish any vlogs, first email the restaurant authority</p>
+                <div class="form-wrap">
+                    <form>
+                        <div class="input-group">
+                            <input type="email"class="form-control" name="Email"placeholder="Email Address">
+                            <div class="input-group-append">
+                                <button class="btn click-btn" type="submit">
+                                    <i class="fab fa-telegram-plane"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+        
+            <div class="footer-bottom row align-items-center text-center
+            text-lg-left no-gutters">
+            <p class="footer-text m-0 col-lg-8 col-md-12">
+                Copyright&copy;<script>document.write(new Date().getFullYear());</script>
+                All rights Reserved by Ode2Code
+                <i class="fas fa-heart" aria-hidden="true"></i>
+                By Arham kazi, Dipesh Gangwani and Gracy Masand
+            </p>
+            <div class="col-lg-4 col-md-12 text-center text-lg-right footer-social">
+                <a href="#"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-twitter"></i></a>
+                <a href="" target="_blank"><i class="fab fa-instagram"></i></a>
+            </div>
+        
+        
+        </div>
+
+        </div>
+    </div>
+</footer>
+<script src="https://unpkg.com/phosphor-icons"></script>
+<script src="./app.bundled.js"></script>
